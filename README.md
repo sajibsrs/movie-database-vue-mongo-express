@@ -1,2 +1,2 @@
-# vue-drama-database
-Database for drama. Drama review and rating application built with VueJs, nodejs, express and mongodb.
+# Drama database application with vue, node, mongo and express.
+Database for drama application for review and rating.
