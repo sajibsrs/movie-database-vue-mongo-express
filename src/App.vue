@@ -1,28 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Home title="Welcome to MDB" desc="A movie database"/>
+    <h1>Welcome</h1>
+    <Header />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
-
+import Header from '@/components/Header'
+import '@/assets/css/main.css'
 export default {
   name: 'App',
   components: {
-    Home
+    Header
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
