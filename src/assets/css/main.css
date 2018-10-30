@@ -33,3 +33,8 @@ a {
   display: inline-block;
   width: 100%;
 }
+
+.validation-info li{
+  display: inline-block;
+  border-bottom: 2px solid red;
+}
