@@ -7,9 +7,14 @@ So far:
  - Project setup
  - vue project creation
  - Some basic project refactoring
- - Components done: App, Home, Header
+ - Components: App, Home, Header, Err404, AddMovies
  - vue router added and configured
  - All styling moved to static css file for now
+ - Express added
+ - Added: morgan, body-parser, cors, mongoose
+ - Added: axios
+ - Mongodb implementation for adding and receiving data in json format
+ - Updated home page with dynamic data from database (for now)
+ - Server implemented
 
 ## Work in progress
-### It may be under progress but every push is a working copy (as far its completed).
