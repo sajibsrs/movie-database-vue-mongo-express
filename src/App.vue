@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <h1>Welcome</h1>
+    <div class="pagination">
+      <a href="/">Home</a> |
+      <a href="/contact">Contact</a>
+    </div>
     <Header />
     <router-view />
   </div>
