@@ -2,11 +2,10 @@
   <div class="hello">
     <h2 class="page-title">This is the home page</h2>
     <div class="movies">
-      <div class="movie">
-        <h3 class="title">Movie title - year</h3>
-        <p class="director">Director name</p>
+      <div v-for="movie in movies" :key="movie.id" class="movie">
+        <h3 class="title">{{movie.name}} - {{movie.year}}</h3>
         <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consectetur minima nesciunt repellat inventore odit accusantium vero, voluptatem veniam suscipit culpa ab ad corrupti molestias esse sit hic, perferendis fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto soluta pariatur eaque qui alias ex, magni nulla molestias perferendis explicabo harum, minus aspernatur praesentium voluptate dolore inventore accusantium dicta?
+          {{movie.description}}
         </p>
       </div>
     </div>
@@ -14,7 +13,25 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  data: () => ({
+    movies: []
+  }),
+  mounted(){
+    this.fetchMovies();
+  },
+  methods: {
+    async fetchMovies() {
+      return axios({
+        method: 'get',
+        url: 'http://localhost:8082/movies'
+      }).then((response) => {
+        this.movies = response.data.movies;
+      }).catch(() => {})
+    }
+  }
 }
 </script>
