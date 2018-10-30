@@ -19,5 +19,17 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  max-width: 1140px;
   margin-top: 60px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.form-wrapper{
+  text-align: left;
+}
+
+.form-wrapper input, .form-wrapper textarea{
+  display: inline-block;
+  width: 100%;
 }
