@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2 class="page-title">This is the home page</h2>
+    <h2 class="page-title">Top Rated Movies (TODO)</h2>
     <div class="movies">
       <div v-for="movie in movies" :key="movie.id" class="movie">
         <h3 class="title">{{movie.name}} - {{movie.year}}</h3>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// Promise based HTTP client for the browser and node.js
 import axios from 'axios';
 
 export default {
