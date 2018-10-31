@@ -19,18 +19,22 @@ app.use(body_parser.json());
 app.use(cors());
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/movie_database', function(){
-  console.log('Connection stablished');
+mongoose.connect('mongodb://localhost:27017/movie_database', function(error) {
+  if (error) {
+    console.log('Unable to connect to the database. Please make sure MongoDB is running.');
+  } else {
+    console.log('Connection to database is successful.');
+  }
 }).catch(err => {
   mongoose.Error('App starting error:', err.stack);
   process.exit(1);
 });
 
-// include controllers
+// autolaader: include controllers
 fs.readdirSync('controllers').forEach(function(file){
   if (file.substr(-3) == '.js') {
-    const route = require('./controllers/' + file);
-    route.controller(app);
+    let module = require('./controllers/' + file.toLowerCase());
+    module.controller(app);
   }
 });
 
