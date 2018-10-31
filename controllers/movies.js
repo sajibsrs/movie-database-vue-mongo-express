@@ -1,27 +1,37 @@
-const MovieSchema = require('../models/Movie.js');
+/**
+ * Movies controller
+ */
+
+const Movie = require('../models/Movie.js');
 
 module.exports.controller = (app) => {
 
-  // fetch all movies
+  // fetch all movies from database if exits
   app.get('/movies', (req, res) => {
-    MovieSchema.find({}, 'name year description',
-    (error, movies) => {
-      if (error) {console.log(error)}
-      res.send({
-        movies
-      });
+    Movie.find({}, 'name year description slug', (error, movies) => {
+      if (error) { console.log(error); }
+      res.send({movies});
     });
   });
-  
-  // add a new movie
+
+  // fetch a single movie
+  app.get('/movies/:slug', (req, res) => {
+    Movie.findOne({'slug': req.params.slug }, 'name year description slug', (error, movie) => {
+      if (error) { console.log(error); }
+      res.send({movie});
+    });
+  })
+
+  // receive movie and store in database
   app.post('/movies', (req, res) => {
-    const newMovie = new MovieSchema({
+    const new_movie = new Movie({
       name: req.body.name,
       year: req.body.year,
-      description: req.body.description
+      description: req.body.description,
+      slug: req.body.slug
     });
 
-    newMovie.save((error, movie) => {
+    new_movie.save((error, movie) => {
       if (error) {
         console.log(error);
       }
