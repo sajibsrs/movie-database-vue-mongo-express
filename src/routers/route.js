@@ -1,9 +1,11 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/Home'
-import Contact from '@/components/Contact'
-import AddMovie from '@/components/AddMovie'
-import Err404 from '@/components/Err404'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/Home';
+import Contact from '@/components/Contact';
+import AddMovie from '@/components/AddMovie';
+import Movies from '@/components/Movies';
+import Movie from '@/components/Movie';
+import Err404 from '@/components/Err404';
 
 Vue.use(Router);
 
@@ -24,6 +26,16 @@ export default new Router({
       path: '/movies/add',
       name: 'AddMovie',
       component: AddMovie
+    },
+    {
+      path: '/movies/:slug',
+      name: 'Movie',
+      component: Movie
+    },
+    {
+      path: '/movies',
+      name: 'Movies',
+      component: Movies
     },
     {
       path: '*',
