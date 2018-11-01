@@ -33,7 +33,7 @@ mongoose.connect('mongodb://localhost:27017/movie_database', function(error) {
 // autolaader: include controllers
 fs.readdirSync('controllers').forEach(function(file){
   if (file.substr(-3) == '.js') {
-    let module = require('./controllers/' + file.toLowerCase());
+    let module = require('./controllers/' + file);
     module.controller(app);
   }
 });
