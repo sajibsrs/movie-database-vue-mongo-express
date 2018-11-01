@@ -2,19 +2,19 @@
 
 Database for movie application for reviews and ratings.
 
-So far:
+Contents at a glance:
 
- - Project setup
- - vue project creation
- - Some basic project refactoring
- - Components: App, Home, Header, Err404, AddMovies
- - vue router added and configured
- - All styling moved to static css file for now
- - Express added
- - Added: morgan, body-parser, cors, mongoose
- - Added: axios
- - Mongodb implementation for adding and receiving data in json format
- - Updated home page with dynamic data from database (for now)
- - Server implemented
+ - Project uses: vuejs, nodejs, express, mongodb, mongoose, morgan, body-parser, cors, axios
+ - Components: App, Home, Header, Err404, AddMovies, Movie, Movies
+ - vue router
+
+ Functionality:
+
+ - Basic custom form validation
+ - Styling: static css file
+ - Data API for json data from database
+ - Movie model to define schema
+ - Movie Controller to receive data from API and store data to database
+ - User friendly URL using slug insted of object id
 
 ## Work in progress
