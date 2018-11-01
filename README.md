@@ -17,4 +17,12 @@ Contents at a glance:
  - Movie Controller to receive data from API and store data to database
  - User friendly URL using slug insted of object id
 
+ Running server (console commands):
+
+ 1. mongod (fist install mongodb and make sure its available from console)
+ 2. node server.js (from inside the project folder)
+ 3. npm run serve (from inside the project folder)
+ 4. point your browser to http://localhost:8080 and API is available at port 8082
+ 
+
 ## Work in progress
