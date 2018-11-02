@@ -24,5 +24,9 @@ Contents at a glance:
  3. npm run serve (from inside the project folder)
  4. point your browser to http://localhost:8080 and API is available at port 8082
  
+ TODO:
+ 
+ 1. Authentication
+ 2. Rating system
 
 ## Work in progress
